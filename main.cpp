@@ -65,17 +65,63 @@ Part1 will be broken up into 5 separate steps
 */
 
 /*
-Thing 10)
+Thing 10) Smart TV
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Backlight Array
+        - Brightness (double)
+        - Rows (int)
+        - Columns (int)
+        - LED Type (std::string)
+        - LED impendance (double)
+
+        - provide backlight
+        - change refresh rate
+        - do local dimming
+    2) Pixel Array
+        - Rows (int)
+        - Columns (int)
+        - Impendance (double)
+        - pattern type (std::string)
+        - gamut (double)
+
+        - change color of pixels to display image
+        - change display resolution
+        - change refresh rate
+    3) Tuner
+        - operating frequency (double)
+        - number of available channels (int)
+        - make (std::string)
+        - supported codecs (std:string)
+        - available memory (double)
+
+        - tune to a frequency to receive content
+        - memorize different populated frequencies
+        - receive and memorize metadata to give channel names to memorized frequencies
+    4) WiFi controller
+        - operating frequency (double)
+        - encryption (std::string)
+        - protocol (float)
+        - bandwidth (double)
+        - range (float)
+
+        - send data wirelessly
+        - receive data wirelessly
+        - connect to a router
+    5) Operating System
+        - name (std::string)
+        - applications (int) 
+        - version number (std::string)
+        - fonts (std::string)
+        - modules (int)
+
+        - perform multiple tasks
+        - regulate hardware power draw
+        - make binary code human readable
+
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Display content from the tuner
+    2) Display content from an external source
+    3) Browse the internet
  */
 
 
