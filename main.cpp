@@ -80,75 +80,7 @@ Part1 will be broken up into 5 separate steps
 3) move Thing 5-9 to between your Thing 4 and Thing 10.
 */
 
-/*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 
 
@@ -211,58 +143,83 @@ Thing 4) Microphone
  */
 
 /*
+Thing 5) Backlight Array
+5 properties:
+    1) Brightness (double)
+    2) Rows (int)
+    3) Columns (int)
+    4) LED Type (std::string)
+    5) LED impendance (double)
+3 things it can do:
+    1) provide backlight
+    2) change refresh rate
+    3) do local dimming
+ */
+
+/*
+Thing 6) Pixel Array
+5 properties:
+    1) Rows (int)
+    2) Columns (int)
+    3) Impendance (double)
+    4) pattern type (std::string)
+    5) gamut (double)
+3 things it can do:
+    1) change color of pixels to display image
+    2) change display resolution
+    3) change refresh rate
+ */
+
+/*
+Thing 7) Tuner
+5 properties:
+    1) operating frequency (double)
+    2) number of available channels (int)
+    3) make (std::string)
+    4) supported codecs (std:string)
+    5) available memory (double)
+3 things it can do:
+    1) tune to a frequency to receive content
+    2) memorize different populated frequencies
+    3) receive and memorize metadata to give channel names to memorized frequencies
+ */
+
+/*
+Thing 8) WiFi controller
+5 properties:
+    1) operating frequency (double)
+    2) encryption (std::string)
+    3) protocol (float)
+    4) bandwidth (double)
+    5) range (float)
+3 things it can do:
+    1) send data wirelessly
+    2) receive data wirelessly
+    3) connect to a router
+ */
+
+/*
+Thing 9)  Operating System
+5 properties:
+    1) name (std::string)
+    2) applications (int) 
+    3) version number (std::string)
+    4) fonts (std::string)
+    5) modules (int)
+3 things it can do:
+    1) perform multiple tasks
+    2) regulate hardware power draw
+    3) make binary code human readable
+ */
+
+/*
 Thing 10) Smart TV
 5 properties:
     1) Backlight Array
-        - Brightness (double)
-        - Rows (int)
-        - Columns (int)
-        - LED Type (std::string)
-        - LED impendance (double)
-
-        - provide backlight
-        - change refresh rate
-        - do local dimming
     2) Pixel Array
-        - Rows (int)
-        - Columns (int)
-        - Impendance (double)
-        - pattern type (std::string)
-        - gamut (double)
-
-        - change color of pixels to display image
-        - change display resolution
-        - change refresh rate
     3) Tuner
-        - operating frequency (double)
-        - number of available channels (int)
-        - make (std::string)
-        - supported codecs (std:string)
-        - available memory (double)
-
-        - tune to a frequency to receive content
-        - memorize different populated frequencies
-        - receive and memorize metadata to give channel names to memorized frequencies
     4) WiFi controller
-        - operating frequency (double)
-        - encryption (std::string)
-        - protocol (float)
-        - bandwidth (double)
-        - range (float)
-
-        - send data wirelessly
-        - receive data wirelessly
-        - connect to a router
     5) Operating System
-        - name (std::string)
-        - applications (int) 
-        - version number (std::string)
-        - fonts (std::string)
-        - modules (int)
-
-        - perform multiple tasks
-        - regulate hardware power draw
-        - make binary code human readable
 
 3 things it can do:
     1) Display content from the tuner
