@@ -57,59 +57,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Orchestra
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of players
+    2) number of players doubling instruments
+    3) number of practice days per week
+    4) money spent on player salaries
+    5) men/women ratio
 3 things it can do:
-    1)
-    2)
-    3)
+    1) play music
+    2) entertain people
+    3) d̶r̶i̶n̶k̶ ̶a̶ ̶l̶o̶t̶  charge recording fees
  */
 
 /*
-Thing 2)
+Thing 2) Recording Studio
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of employees
+    2) number of microhpones available 
+    3) session fee
+    4) desk specifications
+    5) live room area (in m2)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) record music
+    2) mix music 
+    3) master music
  */
 
 /*
-Thing 3)
+Thing 3) Computer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of RAM
+    2) CPU speed
+    3) available storage 
+    4) PSU wattage
+    5) number of display outputs
 3 things it can do:
-    1)
-    2)
-    3)
+    1) compile code
+    2) display images
+    3) play audio
  */
 
 /*
-Thing 4)
+Thing 4) Microphone
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) diaphragm size
+    2) polar pattern
+    3) sensitivity
+    4) signal to noise ratio
+    5) impendance at 1000 hz
 3 things it can do:
-    1)
-    2)
-    3)
+    1) record audio
+    2) produce feedback
+    3) use electricity
  */
 
 
