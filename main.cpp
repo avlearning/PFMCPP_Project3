@@ -89,11 +89,11 @@ Part1 will be broken up into 5 separate steps
 /*
 Thing 1) Orchestra
 5 properties:
-    1) number of players
-    2) number of players doubling instruments
-    3) number of practice days per week
-    4) money spent on player salaries
-    5) men/women ratio
+    1) number of players (int)
+    2) number of players doubling instruments (int)
+    3) number of practice days per week (int)
+    4) money spent on player salaries (float)
+    5) men/women ratio (float)
 3 things it can do:
     1) play music
     2) entertain people
@@ -103,11 +103,11 @@ Thing 1) Orchestra
 /*
 Thing 2) Recording Studio
 5 properties:
-    1) number of employees
-    2) number of microhpones available 
-    3) session fee
-    4) desk specifications
-    5) live room area (in m2)
+    1) number of employees (int)
+    2) number of microhpones available  (int)
+    3) session fee (float)
+    4) desk specifications (std::string)
+    5) live room area (float)
 3 things it can do:
     1) record music
     2) mix music 
@@ -117,11 +117,11 @@ Thing 2) Recording Studio
 /*
 Thing 3) Computer
 5 properties:
-    1) amount of RAM
-    2) CPU speed
-    3) available storage 
-    4) PSU wattage
-    5) number of display outputs
+    1) amount of RAM (double)
+    2) CPU speed (double)
+    3) available storage (double) 
+    4) PSU wattage (double)
+    5) number of display outputs (int)
 3 things it can do:
     1) compile code
     2) display images
@@ -131,11 +131,11 @@ Thing 3) Computer
 /*
 Thing 4) Microphone
 5 properties:
-    1) diaphragm size
-    2) polar pattern
-    3) sensitivity
-    4) signal to noise ratio
-    5) impendance at 1000 hz
+    1) diaphragm size (double)
+    2) polar pattern (std::string)
+    3) sensitivity (double)
+    4) signal to noise ratio (float)
+    5) impendance at 1000 hz (double)
 3 things it can do:
     1) record audio
     2) produce feedback
@@ -215,11 +215,11 @@ Thing 9)  Operating System
 /*
 Thing 10) Smart TV
 5 properties:
-    1) Backlight Array
-    2) Pixel Array
-    3) Tuner
-    4) WiFi controller
-    5) Operating System
+    1) Backlight Array (int)
+    2) Pixel Array (int)
+    3) Tuner (std::string)
+    4) WiFi controller (std::string)
+    5) Operating System (std::string)
 
 3 things it can do:
     1) Display content from the tuner
