@@ -153,8 +153,65 @@ Thing 1) Orchestra
     3) d̶r̶i̶n̶k̶ ̶a̶ ̶l̶o̶t̶  charge recording fees
  */
 
+struct orchestra
+{
+    //number of players (int)
+    int numPlayers = 80;
+    //number of players doubling instruments (int)
+    int numPlayersDoublInst = 10;
+    //number of practice days per week (int)
+    int numPracticeDaysPerWeek = 5;
+    //money spent on player salaries (float)
+    float salariesTotalUSD = 6254138.54f;
+    //men/women ratio (float)
+    float menToWomen = 1.12f;
+
+    //play music
+    void playMusic (float tempo, std::string pieceName);
+    //entertain people
+    void entertain (bool headbang = 1, bool dramaticConductor = 1);
+    //d̶r̶i̶n̶k̶ ̶a̶ ̶l̶o̶t̶  charge recording fees
+    void chargeRecFees (int minutesRecTime, float feeTotal);
+};
+
 /*
-Thing 2) Recording Studio
+Thing 2) Microphone
+5 properties:
+    1) diaphragm size (double)
+    2) polar pattern (std::string)
+    3) sensitivity (double)
+    4) signal to noise ratio (float)
+    5) impendance at 1000 hz (double)
+3 things it can do:
+    1) record audio
+    2) produce feedback
+    3) use electricity
+ */
+
+struct microphone
+{
+    //diaphragm size (double)
+    double diaphragmSize = 0.500000004;
+    //polar pattern (std::string)
+    std::string polarPattern = "Subcardioid";
+    // sensitivity (double)
+    double sensitivity = 40.0;
+    // signal to noise ratio (float)
+    float snr = 92;
+    // impendance at 1000 hz (double)
+    double impendance1k = 1000;
+
+    // record audio
+    void recordAudio (float sampleRate = 44.1f, std::string filetype = ".wav");
+    // produce feedback
+    void produceFeedback (double volume);
+    // use electricity
+    void useElectricity (bool switchOn);
+};
+
+
+/*
+Thing 3) Recording Studio
 5 properties:
     1) number of employees (int)
     2) number of microhpones available  (int)
@@ -167,13 +224,35 @@ Thing 2) Recording Studio
     3) master music
  */
 
+struct recordingStudio
+{
+    // number of employees (int)
+    int numEmployees = 4;
+    // number of microhpones available  (int)
+    int numMics = 67;
+    // session fee (float)
+    int sessionFee = 1000.0f;
+    // desk specifications (std::string)
+    std::string deskSpecs = "Digital, 64 channels, 96 kHz";
+    // live room area (float)
+    float liveRoomArea = 49.5f;
+
+    // record music
+    void record (float sampleRate, int channelCount, float duration, microphone mic);
+    // mix music 
+    void mix (float sampleRate, int channelCount, float duration);
+    // master music
+    void master (float targetLUFS, float ceiling = -0.3f);
+};
+
+
 /*
-Thing 3) Computer
+Thing 4) Computer
 5 properties:
     1) amount of RAM (double)
     2) CPU speed (double)
     3) available storage (double) 
-    4) PSU wattage (double)
+    4) PSU wattage (int)
     5) number of display outputs (int)
 3 things it can do:
     1) compile code
@@ -181,19 +260,40 @@ Thing 3) Computer
     3) play audio
  */
 
-/*
-Thing 4) Microphone
-5 properties:
-    1) diaphragm size (double)
-    2) polar pattern (std::string)
-    3) sensitivity (double)
-    4) signal to noise ratio (float)
-    5) impendance at 1000 hz (double)
-3 things it can do:
-    1) record audio
-    2) produce feedback
-    3) use electricity
- */
+struct computer
+{
+    // amount of RAM (double)
+    double ramTotal = 68.7194767360;
+    // CPU speed (double)
+    double cpuSpeed = 3.41;
+    // available storage (double) 
+    double storageTotal = 1099.511627776;
+    // PSU wattage (double)
+    int powerTotal = 850;
+    // number of display outputs (int)
+    int numVideoOuts = 4;
+
+    struct soundcard
+    {
+        float volume = -20.0f;
+        float sampleRateSC = 48.0f;
+        int bufferSize = 256;
+        int numIn = 2;
+        int numOut = 2;
+
+        void DAC (float getSourceSR, float maxCeiling = -0.1f);
+        void ADC (float getTargetSR, float getPreampGain);
+        void changeBufferSize (int getBufferSize, int targetBufferSize);
+    };
+
+    // compile code
+    void compile (std::string code);
+    // display images
+    void displayImage (int displayRes);
+    // play audio
+    void playAudio (soundcard soundcard);
+};
+
 
 /*
 Thing 5) Backlight Array
@@ -209,6 +309,28 @@ Thing 5) Backlight Array
     3) do local dimming
  */
 
+struct backlightArray 
+{
+    //Brightness (double)
+    double brightness = 1200.15648;
+    //Rows (int)
+    int baRows = 900;
+    //Columns (int)
+    int baColums = 1600;
+    //LED Type (std::string)
+    std::string ledType = "RGB";
+    //LED impendance (double)
+    double ledImpendace = 10.056621;
+
+    // provide backlight
+    void provideBacklight (double brightness, bool dynamicContrast);
+    // change refresh rate
+    void changeBARefreshRate (float baRefRate, float utilityFreq = 60.0f );
+    // do local dimming
+    void doLocalDimming (float fadeSpeed = 0.05f, int numAreas = 240);
+};
+
+
 /*
 Thing 6) Pixel Array
 5 properties:
@@ -222,6 +344,28 @@ Thing 6) Pixel Array
     2) change display resolution
     3) change refresh rate
  */
+
+struct pixelArray
+{
+    //Rows (int)
+    int paRows = 1080;
+    //Columns (int)
+    int paColumns = 1920;
+    //Impendance (double)
+    double paImpendance = 0.595123;
+    //pattern type (std::string)
+    std::string patternType = "delta";
+    //gamut (double)
+    double gamut = 99.15364823;
+
+    // change color of pixels to display image
+    void changePixColor (int targetWidth, int targetHeight, int red, int green, int blue);
+    // change display resolution
+    void changeResolution (int newWidth, int newHeight);
+    // change refresh rate
+    void changePARefreshRate (float paRefRate, float utilityFreq = 60.0f );
+};
+
 
 /*
 Thing 7) Tuner
@@ -237,12 +381,34 @@ Thing 7) Tuner
     3) receive and memorize metadata to give channel names to memorized frequencies
  */
 
+struct tuner
+{
+    // operating frequency (double)
+    double operatingFreq = 216.0 ;
+    // number of available channels (int)
+    int numChannels = 247;
+    // make (std::string)
+    std::string make = "Toshiba";
+    // supported codecs (std:string)
+    std::string supportedCodecs = "x264, x265, Matroska";
+    // available memory (double)
+    double memoryFree = 1024.0000;
+
+    // tune to a frequency to receive content
+    void tune (double tuningFreq);
+    // memorize different populated frequencies
+    void memorizeFreq (double tuningFreq, int slot, std::string saveName);
+    // receive and memorize metadata to give channel names to memorized frequencies
+    void pullMetadata (std::string channelName, int slot);
+};
+
+
 /*
 Thing 8) WiFi controller
 5 properties:
     1) operating frequency (double)
     2) encryption (std::string)
-    3) protocol (float)
+    3) protocol (std::string)
     4) bandwidth (double)
     5) range (float)
 3 things it can do:
@@ -251,13 +417,35 @@ Thing 8) WiFi controller
     3) connect to a router
  */
 
+struct wifiController
+{
+    // operating frequency (double)
+    double wifiFreq = 5.00000;
+    // encryption (std::string)
+    std::string encryption = "WPA2";
+    //) protocol (std::string)
+    std::string protocol = "802.11ax";
+    // bandwidth (double)
+    double bandwidth = 152.12000014;
+    // range (float) 
+    float range = 15.2314f;
+
+    // send data wirelessly
+    void sendData (std::string macAddress);
+    // receive data wirelessly
+    void receiveData (std::string macAddress);
+    // connect to a router
+    void connectToRouter (std::string ssid, std::string passKey);
+};
+
+
 /*
 Thing 9)  Operating System
 5 properties:
     1) name (std::string)
     2) applications (int) 
     3) version number (std::string)
-    4) fonts (std::string)
+    4) number of fonts (int)
     5) modules (int)
 3 things it can do:
     1) perform multiple tasks
@@ -265,20 +453,64 @@ Thing 9)  Operating System
     3) make binary code human readable
  */
 
+struct operatingSystem
+{
+    // name (std::string)
+    std::string osName = "Doors 11";
+    // applications (int) 
+    int applications = 45;
+    // version number (std::string)
+    std::string version = "1.0.0.1";
+    // number of fonts (int)
+    int numFonts = 89;
+    // modules (int)
+    int modules = 16;
+
+    // perform multiple tasks
+    void multitask (int taskNum, bool multithread);
+    // regulate hardware power draw
+    void regulatePowerDraw (bool powerSavingMode, float cpuMaxUtil = 20.0f);
+    // make binary code human readable
+    void readableBinary ();
+};
+
+
 /*
 Thing 10) Smart TV
 5 properties:
-    1) Backlight Array (int)
-    2) Pixel Array (int)
-    3) Tuner (std::string)
-    4) WiFi controller (std::string)
-    5) Operating System (std::string)
+    1) Backlight Array 
+    2) Pixel Array
+    3) Tuner
+    4) WiFi controller
+    5) Operating System
 
 3 things it can do:
     1) Display content from the tuner
     2) Display content from an external source
     3) Browse the internet
  */
+
+struct smartTV
+{
+    //Backlight Array 
+    backlightArray backlightArray;
+    // Pixel Array
+    pixelArray pixelArray;
+    // Tuner
+    tuner tuner;
+    // WiFi controller
+    wifiController wifiController;
+    // Operating System
+    operatingSystem operatingSystem;
+
+    // Display content from the tuner
+    void displayTuner (int channel);
+    // Display content from an external source
+    void displayExt (int out);
+    // Browse the internet
+    void browseNet (std::string url);
+};
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
