@@ -153,7 +153,7 @@ Thing 1) Orchestra
     3) d̶r̶i̶n̶k̶ ̶a̶ ̶l̶o̶t̶  charge recording fees
  */
 
-struct orchestra
+struct Orchestra
 {
     //number of players (int)
     int numPlayers = 80;
@@ -188,7 +188,7 @@ Thing 2) Microphone
     3) use electricity
  */
 
-struct microphone
+struct Microphone
 {
     //diaphragm size (double)
     double diaphragmSize = 0.500000004;
@@ -224,7 +224,7 @@ Thing 3) Recording Studio
     3) master music
  */
 
-struct recordingStudio
+struct RecordingStudio
 {
     // number of employees (int)
     int numEmployees = 4;
@@ -238,7 +238,7 @@ struct recordingStudio
     float liveRoomArea = 49.5f;
 
     // record music
-    void record (float sampleRate, int channelCount, float duration, microphone mic);
+    void record (float sampleRate, int channelCount, float duration, Microphone mic);
     // mix music 
     void mix (float sampleRate, int channelCount, float duration);
     // master music
@@ -260,7 +260,7 @@ Thing 4) Computer
     3) play audio
  */
 
-struct computer
+struct Computer
 {
     // amount of RAM (double)
     double ramTotal = 68.7194767360;
@@ -273,7 +273,7 @@ struct computer
     // number of display outputs (int)
     int numVideoOuts = 4;
 
-    struct soundcard
+    struct Soundcard
     {
         float volume = -20.0f;
         float sampleRateSC = 48.0f;
@@ -291,7 +291,7 @@ struct computer
     // display images
     void displayImage (int displayRes);
     // play audio
-    void playAudio (soundcard soundcard);
+    void playAudio (Soundcard soundcard);
 };
 
 
@@ -309,7 +309,7 @@ Thing 5) Backlight Array
     3) do local dimming
  */
 
-struct backlightArray 
+struct BacklightArray 
 {
     //Brightness (double)
     double brightness = 1200.15648;
@@ -345,7 +345,7 @@ Thing 6) Pixel Array
     3) change refresh rate
  */
 
-struct pixelArray
+struct PixelArray
 {
     //Rows (int)
     int paRows = 1080;
@@ -381,7 +381,7 @@ Thing 7) Tuner
     3) receive and memorize metadata to give channel names to memorized frequencies
  */
 
-struct tuner
+struct Tuner
 {
     // operating frequency (double)
     double operatingFreq = 216.0 ;
@@ -417,7 +417,7 @@ Thing 8) WiFi controller
     3) connect to a router
  */
 
-struct wifiController
+struct WifiController
 {
     // operating frequency (double)
     double wifiFreq = 5.00000;
@@ -453,7 +453,7 @@ Thing 9)  Operating System
     3) make binary code human readable
  */
 
-struct operatingSystem
+struct OperatingSystem
 {
     // name (std::string)
     std::string osName = "Doors 11";
@@ -490,18 +490,18 @@ Thing 10) Smart TV
     3) Browse the internet
  */
 
-struct smartTV
+struct SmartTV
 {
     //Backlight Array 
-    backlightArray backlightArray;
+    BacklightArray backlightArray;
     // Pixel Array
-    pixelArray pixelArray;
+    PixelArray pixelArray;
     // Tuner
-    tuner tuner;
+    Tuner tuner;
     // WiFi controller
-    wifiController wifiController;
+    WifiController wifiController;
     // Operating System
-    operatingSystem operatingSystem;
+    OperatingSystem operatingSystem;
 
     // Display content from the tuner
     void displayTuner (int channel);
